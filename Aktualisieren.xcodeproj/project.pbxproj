@@ -13,6 +13,7 @@
 		A4E50BBB21D4E29300909B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4E50BBA21D4E29300909B0E /* Assets.xcassets */; };
 		A4E50BBE21D4E29300909B0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E50BBC21D4E29300909B0E /* LaunchScreen.storyboard */; };
 		A4E50BC121D4E29300909B0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E50BC021D4E29300909B0E /* main.m */; };
+		A4E50BC921D4E2D200909B0E /* Aktualisieren.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E50BC821D4E2D200909B0E /* Aktualisieren.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		A4E50BBD21D4E29300909B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4E50BBF21D4E29300909B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E50BC021D4E29300909B0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4E50BC721D4E2D200909B0E /* Aktualisieren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aktualisieren.h; sourceTree = "<group>"; };
+		A4E50BC821D4E2D200909B0E /* Aktualisieren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aktualisieren.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				A4E50BB221D4E29100909B0E /* AppDelegate.m */,
 				A4E50BB421D4E29100909B0E /* ViewController.h */,
 				A4E50BB521D4E29100909B0E /* ViewController.m */,
+				A4E50BC721D4E2D200909B0E /* Aktualisieren.h */,
+				A4E50BC821D4E2D200909B0E /* Aktualisieren.m */,
 				A4E50BB721D4E29100909B0E /* Main.storyboard */,
 				A4E50BBA21D4E29300909B0E /* Assets.xcassets */,
 				A4E50BBC21D4E29300909B0E /* LaunchScreen.storyboard */,
@@ -144,6 +149,7 @@
 				A4E50BB621D4E29100909B0E /* ViewController.m in Sources */,
 				A4E50BC121D4E29300909B0E /* main.m in Sources */,
 				A4E50BB321D4E29100909B0E /* AppDelegate.m in Sources */,
+				A4E50BC921D4E2D200909B0E /* Aktualisieren.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
