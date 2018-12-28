@@ -10,6 +10,6 @@
 
 @interface Aktualisieren : UIView
 
-+ (void)checkNewVersion: (NSString *)appId;
++ (void)checkNewVersionWithAppId: (NSString *)appId;
     
 @end

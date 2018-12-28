@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Aktualisieren.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Aktualisieren checkNewVersionWithAppId: @"934253188"];
     return YES;
 }
 

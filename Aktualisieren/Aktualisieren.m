@@ -15,7 +15,7 @@ static NSString *nextTimeUpdateKey = @"nextTimeUpdateKey";
 
 static CGFloat customNewVersionView_conatiner_padding = 32;
 static CGFloat customNewVersionView_content_padding = 12;
-static CGFloat customNewVersionView_button_height = 50;
+static CGFloat customNewVersionView_button_height = 44;
 static CGFloat customNewVersionView_content_max_height = 300;
 
 @interface Aktualisieren()
@@ -35,7 +35,7 @@ static CGFloat customNewVersionView_content_max_height = 300;
 
 @implementation Aktualisieren
     
-+ (void)checkNewVersion: (NSString *)appId {
++ (void)checkNewVersionWithAppId: (NSString *)appId {
     NSURLSession *session = [NSURLSession sharedSession];
     NSString *urlString = [NSString stringWithFormat: @"https://itunes.apple.com/cn/lookup?id=%@", appId];
     NSURL *url = [NSURL URLWithString: urlString];
@@ -166,6 +166,13 @@ static CGFloat customNewVersionView_content_max_height = 300;
     }
     return _updateBtn;
 }
+    
+- (UIView *)generateSepratorLine {
+    UIView *v = [[UIView alloc] init];
+    v.translatesAutoresizingMaskIntoConstraints = NO;
+    v.backgroundColor = [UIColor lightGrayColor];
+    return v;
+}
 
 #pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -186,15 +193,27 @@ static CGFloat customNewVersionView_content_max_height = 300;
     UIView *containerView = [[UIView alloc] init];
     containerView.translatesAutoresizingMaskIntoConstraints = NO;
     containerView.backgroundColor = [UIColor whiteColor];
-    containerView.layer.cornerRadius = 8;
+    containerView.layer.cornerRadius = 12;
     containerView.layer.masksToBounds = YES;
     [self addSubview: containerView];
     
     [containerView addSubview: self.titleLabel];
     [containerView addSubview: self.contentLabel];
     
+    UIView *skip_top_line = [self generateSepratorLine];
+    [containerView addSubview: skip_top_line];
+    
     [containerView addSubview: self.skipBtn];
+    
+    UIView *skip_bottom_line = [self generateSepratorLine];
+    [containerView addSubview: skip_bottom_line];
+    
+    
     [containerView addSubview: self.nextTimeBtn];
+    
+    UIView *nextTime_bottom_line = [self generateSepratorLine];
+    [containerView addSubview: nextTime_bottom_line];
+    
     [containerView addSubview: self.updateBtn];
     
     // events
@@ -227,12 +246,26 @@ static CGFloat customNewVersionView_content_max_height = 300;
     self.contentHeightConstraint = content_label_height_less;
     [NSLayoutConstraint activateConstraints: @[content_label_top, content_label_left, content_label_right, content_label_height_less]];
     
+    // skip_top_line
+    NSLayoutConstraint *s_top_line_top = [skip_top_line.topAnchor constraintEqualToAnchor: self.contentLabel.bottomAnchor constant: 12];
+    NSLayoutConstraint *s_top_line_left = [skip_top_line.leftAnchor constraintEqualToAnchor: containerView.leftAnchor constant: 0];
+    NSLayoutConstraint *s_top_line_right = [skip_top_line.rightAnchor constraintEqualToAnchor: containerView.rightAnchor constant: 0];
+    NSLayoutConstraint *s_top_line_height = [skip_top_line.heightAnchor constraintEqualToConstant: 1];
+    [NSLayoutConstraint activateConstraints: @[s_top_line_top, s_top_line_left, s_top_line_right, s_top_line_height]];
+    
     // skip
-    NSLayoutConstraint *skip_top = [self.skipBtn.topAnchor constraintEqualToAnchor: self.contentLabel.bottomAnchor constant: 12];
+    NSLayoutConstraint *skip_top = [self.skipBtn.topAnchor constraintEqualToAnchor: skip_top_line.bottomAnchor constant: 0];
     NSLayoutConstraint *skip_left = [self.skipBtn.leftAnchor constraintEqualToAnchor: containerView.leftAnchor constant: 0];
     NSLayoutConstraint *skip_right = [self.skipBtn.rightAnchor constraintEqualToAnchor: containerView.rightAnchor constant: 0];
     NSLayoutConstraint *skip_height = [self.skipBtn.heightAnchor constraintEqualToConstant: customNewVersionView_button_height];
     [NSLayoutConstraint activateConstraints: @[skip_top, skip_left, skip_right, skip_height]];
+    
+    // skip_bottom_line
+    NSLayoutConstraint *s_bottom_line_top = [skip_bottom_line.topAnchor constraintEqualToAnchor: self.skipBtn.bottomAnchor constant: 0];
+    NSLayoutConstraint *s_bottom_line_left = [skip_bottom_line.leftAnchor constraintEqualToAnchor: containerView.leftAnchor constant: 0];
+    NSLayoutConstraint *s_bottom_line_right = [skip_bottom_line.rightAnchor constraintEqualToAnchor: containerView.rightAnchor constant: 0];
+    NSLayoutConstraint *s_bottom_line_height = [skip_bottom_line.heightAnchor constraintEqualToConstant: 1];
+    [NSLayoutConstraint activateConstraints: @[s_bottom_line_top, s_bottom_line_left, s_bottom_line_right, s_bottom_line_height]];
     
     // nextTime
     NSLayoutConstraint *nextTime_top = [self.nextTimeBtn.topAnchor constraintEqualToAnchor: self.skipBtn.bottomAnchor constant: 0];
@@ -241,8 +274,15 @@ static CGFloat customNewVersionView_content_max_height = 300;
     NSLayoutConstraint *nextTime_height = [self.nextTimeBtn.heightAnchor constraintEqualToConstant: customNewVersionView_button_height];
     [NSLayoutConstraint activateConstraints: @[nextTime_top, nextTime_left, nextTime_right, nextTime_height]];
     
+    // nextTime_bottom_line
+    NSLayoutConstraint *nextTime_bottom_line_top = [nextTime_bottom_line.topAnchor constraintEqualToAnchor: self.nextTimeBtn.bottomAnchor constant: 0];
+    NSLayoutConstraint *nextTime_bottom_line_left = [nextTime_bottom_line.leftAnchor constraintEqualToAnchor: containerView.leftAnchor constant: 0];
+    NSLayoutConstraint *nextTime_bottom_line_right = [nextTime_bottom_line.rightAnchor constraintEqualToAnchor: containerView.rightAnchor constant: 0];
+    NSLayoutConstraint *nextTime_bottom_line_height = [nextTime_bottom_line.heightAnchor constraintEqualToConstant: 1];
+    [NSLayoutConstraint activateConstraints: @[nextTime_bottom_line_top, nextTime_bottom_line_left, nextTime_bottom_line_right, nextTime_bottom_line_height]];
+    
     // update
-    NSLayoutConstraint *update_top = [self.updateBtn.topAnchor constraintEqualToAnchor: self.nextTimeBtn.bottomAnchor constant: 0];
+    NSLayoutConstraint *update_top = [self.updateBtn.topAnchor constraintEqualToAnchor: nextTime_bottom_line.bottomAnchor constant: 0];
     NSLayoutConstraint *update_left = [self.updateBtn.leftAnchor constraintEqualToAnchor: containerView.leftAnchor constant: 0];
     NSLayoutConstraint *update_right = [self.updateBtn.rightAnchor constraintEqualToAnchor: containerView.rightAnchor constant: 0];
     NSLayoutConstraint *update_height = [self.updateBtn.heightAnchor constraintEqualToConstant: customNewVersionView_button_height];
