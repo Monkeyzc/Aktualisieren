@@ -14,7 +14,7 @@
 		A4E50BBE21D4E29300909B0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E50BBC21D4E29300909B0E /* LaunchScreen.storyboard */; };
 		A4E50BC121D4E29300909B0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E50BC021D4E29300909B0E /* main.m */; };
 		A4E50BC921D4E2D200909B0E /* Aktualisieren.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E50BC821D4E2D200909B0E /* Aktualisieren.m */; };
-		A4E50BCD21D608A800909B0E /* AktualisierenF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E50BCC21D608A700909B0E /* AktualisierenF.swift */; };
+		A4E50BCD21D608A800909B0E /* Aktualisieren.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E50BCC21D608A700909B0E /* Aktualisieren.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		A4E50BC021D4E29300909B0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4E50BC721D4E2D200909B0E /* Aktualisieren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aktualisieren.h; sourceTree = "<group>"; };
 		A4E50BC821D4E2D200909B0E /* Aktualisieren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aktualisieren.m; sourceTree = "<group>"; };
-		A4E50BCC21D608A700909B0E /* AktualisierenF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AktualisierenF.swift; sourceTree = "<group>"; };
+		A4E50BCC21D608A700909B0E /* Aktualisieren.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aktualisieren.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 				A4E50BB521D4E29100909B0E /* ViewController.m */,
 				A4E50BC721D4E2D200909B0E /* Aktualisieren.h */,
 				A4E50BC821D4E2D200909B0E /* Aktualisieren.m */,
-				A4E50BCC21D608A700909B0E /* AktualisierenF.swift */,
+				A4E50BCC21D608A700909B0E /* Aktualisieren.swift */,
 				A4E50BB721D4E29100909B0E /* Main.storyboard */,
 				A4E50BBA21D4E29300909B0E /* Assets.xcassets */,
 				A4E50BBC21D4E29300909B0E /* LaunchScreen.storyboard */,
@@ -152,7 +152,7 @@
 			files = (
 				A4E50BB621D4E29100909B0E /* ViewController.m in Sources */,
 				A4E50BC121D4E29300909B0E /* main.m in Sources */,
-				A4E50BCD21D608A800909B0E /* AktualisierenF.swift in Sources */,
+				A4E50BCD21D608A800909B0E /* Aktualisieren.swift in Sources */,
 				A4E50BB321D4E29100909B0E /* AppDelegate.m in Sources */,
 				A4E50BC921D4E2D200909B0E /* Aktualisieren.m in Sources */,
 			);

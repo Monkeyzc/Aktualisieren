@@ -6,7 +6,7 @@
 //  Copyright © 2018 zhaofei. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let currentInstalledVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
 private var skippedVersionKey = "skippedVersionKey"
